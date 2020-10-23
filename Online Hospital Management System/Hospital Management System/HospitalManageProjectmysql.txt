@@ -1,0 +1,180 @@
+create table employee(
+  name varchar(40),
+  eid int NOT NULL auto_increment,
+  address varchar(200),
+  phone_num int,
+  UNIQUE (phone_num),
+  PRIMARY KEY(eid)
+);
+
+create table doctor(
+  eid int NOT NULL,
+  specialty varchar(40),
+  droom int,
+  availability boolean,
+  UNIQUE (droom),
+  PRIMARY KEY(eid),
+  FOREIGN KEY(eid) REFERENCES employee(eid)
+  ON DELETE CASCADE
+);
+
+create table nurse(
+  eid int NOT NULL,
+  diploma varchar(100),
+  experience int,
+  PRIMARY KEY(eid),
+  FOREIGN KEY(eid) REFERENCES employee(eid)
+  ON DELETE CASCADE
+);
+
+create table patient(
+  pname varchar(40),
+  pid int NOT NULL AUTO_INCREMENT,
+  sex varchar(10),
+  height double,
+  weight double,
+  address varchar(200),
+  phone_no int,
+  blood_type varchar(15),
+  priority int,
+  PRIMARY KEY(pid),
+  UNIQUE (phone_no)
+);
+
+create table room(
+  room_no int,
+  entry_date varchar(10),
+  release_date varchar(10),
+  cost_per_day double,
+  PRIMARY KEY(room_no),
+  eid int,
+  pid int,
+  FOREIGN KEY(eid) REFERENCES nurse(eid),
+  FOREIGN KEY(pid) REFERENCES patient(pid)
+);
+
+create table disease(
+  pid int NOT NULL,
+  dname varchar(40),
+  cure boolean,
+  PRIMARY KEY(pid, dname),
+  FOREIGN KEY(pid) REFERENCES patient(pid)
+);
+
+create table medicine(
+  pid int NOT NULL,
+  mname varchar(40),
+  mcost double,
+  eid int NOT NULL,
+  PRIMARY KEY(pid, mname),
+  FOREIGN KEY(pid) REFERENCES patient(pid),
+  FOREIGN KEY(eid) REFERENCES doctor(eid)
+);
+
+create table service(
+  pid int NOT NULL,
+  sname varchar(40),
+  scost double,
+  eid int NOT NULL,
+  PRIMARY KEY(pid, sname),
+  FOREIGN KEY(pid) REFERENCES patient(pid),
+  FOREIGN KEY(eid) REFERENCES doctor(eid)
+);
+
+create table appointment_with(
+  pid int NOT NULL,
+  eid int NOT NULL,
+  date varchar(15),
+  time varchar(10),
+  PRIMARY KEY(pid, eid),  
+  FOREIGN KEY(pid) REFERENCES patient(pid),
+  FOREIGN KEY(eid) REFERENCES doctor(eid)
+);
+
+
+
+INSERT INTO room (room_no, cost_per_day) VALUES(101,2000);
+INSERT INTO room (room_no, cost_per_day) VALUES(102,3000);
+INSERT INTO room (room_no, cost_per_day) VALUES(103,20000);
+INSERT INTO room (room_no, cost_per_day) VALUES(104,1000);
+INSERT INTO room (room_no, cost_per_day) VALUES(105,2000);
+INSERT INTO room (room_no, cost_per_day) VALUES(106,2000);
+INSERT INTO room (room_no, cost_per_day) VALUES(107,3000);
+INSERT INTO room (room_no, cost_per_day) VALUES(108,3000);
+INSERT INTO room (room_no, cost_per_day) VALUES(109,3000);
+INSERT INTO room (room_no, cost_per_day) VALUES(110,1000);
+INSERT INTO room (room_no, cost_per_day) VALUES(111,1000);
+
+
+"INSERT INTO service(pid, sname, scost, eid) VALUES('$id', '$ser', '$cost', 'sdoc')";
+
+"INSERT INTO medicine(pid, mname, mcost, eid) VALUES('$mpid', '$mname', '$mcost', '$eid')";
+
+"INSERT INTO employee(name, address, phone_num) VALUES('$name', '$address', '$phone_num')";
+
+
+"INSERT INTO doctor(eid, droom, specialty, availability) VALUES($value,'$droom','$specialty', '$availability')";
+
+"INSERT INTO nurse(eid, experience, diploma) VALUES('$value','$experience','$diploma')";
+ 
+"INSERT INTO patient(pname, phone_no, sex, blood_type, address, height, weight) VALUES('$pname', '$phone_no', '$sex', '$blood_type', '$address', '$height', '$weight')";
+			
+"SELECT * FROM patient WHERE phone_no = $phone_no";
+
+"UPDATE room set entry_date = curdate(), pid='$val3',eid='$nurse_eid' where room_no='$proom'";
+
+
+'SELECT room_no, cost_per_day from room WHERE entry_date IS NULL';
+
+'SELECT employee.eid as nurse_id, name from employee inner join nurse on employee.eid = nurse.eid';
+
+
+"SELECT * FROM employee INNER JOIN doctor ON employee.eid = doctor.eid where employee.eid = '$eid'";
+			
+
+"SELECT patient.pid as pid,pname , sex,blood_type from appointment_with JOIN patient on appointment_with.pid = patient.pid where eid = '$eid'";
+
+"SELECT mname, patient.pname as pname from medicine join patient on patient.pid = medicine.pid where eid = '$eid'";
+
+"SELECT sname, patient.pname as pname from service JOIN patient on patient.pid = service.pid where eid = '$eid'";
+
+'SELECT employee.eid AS eid, name, droom, specialty,status FROM employee INNER JOIN doctor ON employee.eid = doctor.eid';
+
+
+"SELECT * FROM service,patient  WHERE patient.pid = service.pid and phone_no='$phone_no'";
+
+
+"SELECT * FROM medicine,patient WHERE patient.pid = medicine.pid and phone_no='$phone_no'";
+
+"INSERT INTO appointment_with(eid, pid, date, time) VALUES ('$doc', '$val3',CURDATE(),CURTIME() )";
+
+'SELECT employee.eid AS eid, name, droom, specialty FROM employee INNER JOIN doctor ON employee.eid = doctor.eid';
+
+SELECT * FROM login, employee WHERE id = '$name' AND password = SHA('$password') AND id = eid";
+
+"SELECT * FROM employee INNER JOIN nurse ON employee.eid = nurse.eid where employee.eid = '$eid'";
+
+"SELECT r.*, p.pname as pname from room r join patient p on p.pid = r.pid where r.eid = '$eid'";
+
+'SELECT employee.eid AS eid, name, experience, diploma FROM employee INNER JOIN nurse ON employee.eid = nurse.eid';
+
+"SELECT *  from  patient where pid = '$pid'";
+
+"SELECT *  from  disease where pid = '$pid'";
+
+"SELECT mname, mcost,employee.name as name,employee.eid as eid from medicine inner join patient on patient.pid = medicine.pid inner join employee  on employee.eid = medicine.eid where medicine.pid = '$pid'";
+
+"SELECT sname, scost,employee.name as name,employee.eid as eid from service join patient on patient.pid = service.pid join employee on employee.eid = service.eid where service.pid = '$pid'";
+
+"UPDATE doctor set status='removed' where eid='$eid' ";
+
+"UPDATE nurse set status='removed' where eid='$eid' ";
+
+"INSERT INTO login(id, password, job) VALUES('$name', SHA('$password'), 'doctor')";
+
+
+
+            
+
+
+
