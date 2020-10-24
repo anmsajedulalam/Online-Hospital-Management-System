@@ -9,7 +9,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author smtajwar
+ * @author sajid
  */
 public enum Rating implements Serializable{
     ONE,TWO,THREE,FOUR,FIVE,SIX,SEVEN,EIGHT,NINE,TEN
