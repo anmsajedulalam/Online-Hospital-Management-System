@@ -9,7 +9,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author smtajwar
+ * @author sajid
  * @param <T>
  */
 public interface IObservable<T> extends Serializable{
