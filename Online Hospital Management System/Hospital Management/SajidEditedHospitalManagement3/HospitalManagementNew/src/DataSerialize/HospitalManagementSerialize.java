@@ -18,7 +18,7 @@ import model.HospitalState;
 
 /**
  *
- * @author smtajwar
+ * @author sajid
  */
 public class HospitalManagementSerialize implements IHospitalManagementSerialize<HospitalState>  {
         private File dbFile;
