@@ -9,7 +9,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author smtajwar
+ * @author sajid
  */
 public enum Gender implements Serializable{
     MALE, FEMALE, UNKNOWN
