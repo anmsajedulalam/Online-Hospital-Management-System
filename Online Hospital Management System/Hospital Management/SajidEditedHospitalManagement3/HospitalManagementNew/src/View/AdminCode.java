@@ -10,7 +10,7 @@ import static model.Admin.ADMIN_CODE;
 
 /**
  *
- * @author smtajwar
+ * @author sajid
  */
 public class AdminCode extends javax.swing.JFrame {
 
