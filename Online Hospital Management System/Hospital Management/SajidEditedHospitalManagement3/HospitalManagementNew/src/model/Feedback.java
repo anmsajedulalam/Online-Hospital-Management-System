@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  *
- * @author smtajwar
+ * @author sajid
  */
 public class Feedback implements Serializable{
 
