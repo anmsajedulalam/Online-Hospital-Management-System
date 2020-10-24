@@ -13,7 +13,7 @@ import model.IObserver;
 
 /**
  *
- * @author smtajwar
+ * @author sajid
  */
 public class RepositoryChangeObserver implements IObserver<HospitalState>, Serializable{
 
