@@ -14,7 +14,7 @@ import java.util.Map;
 
 /**
  *
- * @author smtajwar
+ * @author sajid
  */
 public class Patient extends User implements Serializable {
 
