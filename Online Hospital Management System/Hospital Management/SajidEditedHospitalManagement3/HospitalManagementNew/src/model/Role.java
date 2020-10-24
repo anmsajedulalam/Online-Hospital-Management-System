@@ -9,7 +9,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author smtajwar
+ * @author sajid
  */
 public enum Role implements Serializable{
     PATIENT, DOCTOR, ADMIN ,SECRETARY 
