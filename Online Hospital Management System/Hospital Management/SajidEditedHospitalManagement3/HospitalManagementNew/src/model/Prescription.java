@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  *
- * @author smtajwar
+ * @author sajid
  */
 public class Prescription implements Serializable{
     private Doctor doctor;
