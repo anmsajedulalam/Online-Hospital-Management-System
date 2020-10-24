@@ -14,7 +14,7 @@ import model.Secretary;
 
 /**
  *
- * @author smtajwar
+ * @author sajid
  */
 public class HospitalManagement {
 
