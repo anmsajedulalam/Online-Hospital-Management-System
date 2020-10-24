@@ -7,7 +7,7 @@ package View;
 
 /**
  *
- * @author smtajwar
+ * @author sajid
  */
 public class PatientInteraction extends javax.swing.JFrame {
 
