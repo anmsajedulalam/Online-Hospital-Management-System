@@ -7,7 +7,7 @@ package DataSerialize;
 
 /**
  *
- * @author smtajwar
+ * @author sajid
  */
 public interface IHospitalManagementSerialize<T> {
     void saveState(T t);
