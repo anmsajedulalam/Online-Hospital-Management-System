@@ -14,7 +14,7 @@ import java.util.Set;
 
 /**
  *
- * @author smtajwar
+ * @author sajid
  */
 public class HospitalState implements Serializable, IObservable<HospitalState> {
    
