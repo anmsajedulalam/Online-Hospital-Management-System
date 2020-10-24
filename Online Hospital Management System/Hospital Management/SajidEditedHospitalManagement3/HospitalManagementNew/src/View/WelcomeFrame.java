@@ -7,7 +7,7 @@ package View;
 
 /**
  *
- * @author smtajwar
+ * @author sajid
  */
 public class WelcomeFrame extends javax.swing.JFrame {
 
