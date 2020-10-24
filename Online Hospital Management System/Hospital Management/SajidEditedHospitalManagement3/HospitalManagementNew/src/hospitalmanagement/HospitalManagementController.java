@@ -26,7 +26,7 @@ import repository.RepositoryChangeObserver;
 
 /**
  *
- * @author smtajwar
+ * @author sajid
  */
 public class HospitalManagementController {
 
