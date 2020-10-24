@@ -7,7 +7,7 @@ package repository;
 
 /**
  *
- * @author smtajwar
+ * @author sajid
  */
 public interface HospitalManagementRepository<T> {
     
