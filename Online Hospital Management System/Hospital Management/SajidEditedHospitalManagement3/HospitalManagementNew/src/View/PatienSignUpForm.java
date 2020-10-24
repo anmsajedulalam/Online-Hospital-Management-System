@@ -10,7 +10,7 @@ import model.Patient;
 
 /**
  *
- * @author smtajwar
+ * @author sajid
  */
 public class PatienSignUpForm extends javax.swing.JFrame {
 
