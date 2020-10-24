@@ -7,7 +7,7 @@ package View;
 
 /**
  *
- * @author smtajwar
+ * @author sajid
  */
 public class SecretaryAccount extends javax.swing.JFrame {
 
