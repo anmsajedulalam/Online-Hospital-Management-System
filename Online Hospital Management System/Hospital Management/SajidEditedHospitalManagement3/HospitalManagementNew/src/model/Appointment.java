@@ -10,7 +10,7 @@ import java.util.Date;
 
 /**
  *
- * @author smtajwar
+ * @author sajid
  */
 public class Appointment implements Serializable{
     
