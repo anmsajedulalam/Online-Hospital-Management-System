@@ -19,7 +19,7 @@ import model.HospitalState;
 
 /**
  *
- * @author smtajwar
+ * @author sajid
  */
 public class HospitalManagementRepositoryImpl implements HospitalManagementRepository<HospitalState>, Serializable {
 
