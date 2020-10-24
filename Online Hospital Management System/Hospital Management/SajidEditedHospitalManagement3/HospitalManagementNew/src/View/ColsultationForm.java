@@ -7,7 +7,7 @@ package View;
 
 /**
  *
- * @author smtajwar
+ * @author sajid
  */
 public class ColsultationForm extends javax.swing.JFrame {
 
