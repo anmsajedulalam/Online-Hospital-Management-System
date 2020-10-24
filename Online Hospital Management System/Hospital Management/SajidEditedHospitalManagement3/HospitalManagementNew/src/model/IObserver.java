@@ -9,7 +9,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author smtajwar
+ * @author sajid
  */
 public interface IObserver<T> extends Serializable {
     void update(IObservable o, T arg);
